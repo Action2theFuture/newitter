@@ -10,17 +10,36 @@ function App() {
     authService.onAuthStateChanged((user) => {
       if (user) {
         setIsLoggedIn(true);
-        setUserObj(user);
-      } else {
-        setIsLoggedIn(false);
+        //setUserObj(user) 
+        // 방법 2
+        setUserObj({
+          displayName: user.displayName,
+          uid: user.uid,
+          updateProfile: (args) => user.updateProfile(args)
+        });
       }
+      //userObj 안에는 많은 method가 있다 so 작게 만들어준다 
+      // 방법 1
       setInit(true);
     });
   }, []);
+  const refreshUser = () => {
+    const user = authService.currentUser;
+    setUserObj({
+      displayName: user.displayName,
+      uid: user.uid,
+      // 방법 1
+
+      // setUserObj(Object.assign({}. user)); 
+      // 방법 2
+      updateProfile: (args) => user.updateProfile(args),
+    });
+  };
+  // refresh user's profile 
   return (
     <>
       {init ? (
-        <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} />
+        <AppRouter refreshUser={refreshUser} isLoggedIn={isLoggedIn} userObj={userObj} />
       ) : (
           "Initializing..."
         )}
