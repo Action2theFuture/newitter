@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/newitter/static/css/main.31b1a5f4.chunk.css",
+    "main.js": "/newitter/static/js/main.ebc64e7f.chunk.js",
+    "main.js.map": "/newitter/static/js/main.ebc64e7f.chunk.js.map",
+    "runtime-main.js": "/newitter/static/js/runtime-main.f142f930.js",
+    "runtime-main.js.map": "/newitter/static/js/runtime-main.f142f930.js.map",
+    "static/js/2.ccecacca.chunk.js": "/newitter/static/js/2.ccecacca.chunk.js",
+    "static/js/2.ccecacca.chunk.js.map": "/newitter/static/js/2.ccecacca.chunk.js.map",
+    "index.html": "/newitter/index.html",
+    "static/css/main.31b1a5f4.chunk.css.map": "/newitter/static/css/main.31b1a5f4.chunk.css.map",
+    "static/js/2.ccecacca.chunk.js.LICENSE.txt": "/newitter/static/js/2.ccecacca.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f142f930.js",
+    "static/js/2.ccecacca.chunk.js",
+    "static/css/main.31b1a5f4.chunk.css",
+    "static/js/main.ebc64e7f.chunk.js"
+  ]
+}
