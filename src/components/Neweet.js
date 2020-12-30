@@ -1,4 +1,4 @@
-import { dbService } from "fbase";
+import { dbService, storageService } from "fbase";
 import React, { useState } from "react";
 
 const Neweet = ({ neweetObj, isOwner }) => {
@@ -8,6 +8,7 @@ const Neweet = ({ neweetObj, isOwner }) => {
         const ok = window.confirm("Are you want to delete this neweet")
         if (ok) {
             await dbService.doc(`Neweets/${neweetObj.id}`).delete();
+            await storageService.refFromURL(neweetObj.attachmentUrl).delete();
             //delete neweet
         }
     }
@@ -42,6 +43,7 @@ const Neweet = ({ neweetObj, isOwner }) => {
             ) : (
                     <>
                         <h4>{neweetObj.text}</h4>
+                        {neweetObj.attachmentUrl && (<img src={neweetObj.attachmentUrl} width="50px" height="50px" />)}
                         {isOwner && (
                             <>
                                 <button onClick={onDeleteClick}>Delete Neweet</button>
