@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 const Home = ({ userObj }) => {
     const [neweet, setNeweet] = useState("");
     const [neweets, setNeweets] = useState([]);
-    const [attachment, setAttachment] = useState();
+    const [attachment, setAttachment] = useState("");
     // const getNeweets = async () => {
     //     const dbNeweets = await dbService.collection("Neweets").get();
     //     dbNeweets.forEach((document) => {
